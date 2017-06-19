@@ -1,14 +1,14 @@
-import { CoreUIPage } from './app.po';
+import { NeutrinoWebPage } from './app.po';
 
-describe('core-ui App', function() {
-  let page: CoreUIPage;
+describe('neutrino-web App', () => {
+  let page: NeutrinoWebPage;
 
   beforeEach(() => {
-    page = new CoreUIPage();
+    page = new NeutrinoWebPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!!');
   });
 });
