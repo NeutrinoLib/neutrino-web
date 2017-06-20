@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
+import { HttpModule, JsonpModule, XHRBackend, RequestOptions } from '@angular/http';
 
 import { ToasterModule, ToasterService } from 'angular2-toaster';
 
 import { SidebarService } from './services/sidebar.service';
+import { NeutrinoApiService } from './services/neutrino-api.service';
 
 import { AppComponent } from './app.component';
 
@@ -30,6 +32,7 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     ToasterModule,
     RouterModule.forRoot([
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -40,7 +43,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ]) 
   ],
   providers: [
-    SidebarService
+    SidebarService,
+    NeutrinoApiService
   ],
   bootstrap: [AppComponent]
 })

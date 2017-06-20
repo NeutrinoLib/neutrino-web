@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarService } from "app/services/sidebar.service";
+import { NeutrinoApiService } from "app/services/neutrino-api.service";
+import { Node } from '../../entities/node';
 
 @Component({
     selector: 'app-nodes',
@@ -8,9 +10,19 @@ import { SidebarService } from "app/services/sidebar.service";
 })
 export class NodesPage implements OnInit {
 
-    constructor(sidebarService: SidebarService) 
+    protected nodes: Node[];
+
+    constructor(
+        private sidebarService: SidebarService, 
+        private neutrinoApiService: NeutrinoApiService) 
     { 
         sidebarService.active = "nodes";
+
+        console.log("test");
+        this.neutrinoApiService.getNodes().subscribe(result => {
+            var json = result.json();
+            this.nodes = json;
+        });
     }
 
     ngOnInit() {
