@@ -1,0 +1,11 @@
+<aside class="main-sidebar">
+    <section class="sidebar" style="height: auto;">
+        <ul class="sidebar-menu tree" data-widget="tree">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="{{ getClass('home') }}"><a [routerLink]="['/home']"><i class="fa fa-th"></i> <span>Dashboard</span></a></li>
+            <li class="{{ getClass('nodes') }}"><a [routerLink]="['/nodes']"><i class="fa fa-server"></i> <span>Nodes</span></a></li>
+            <li class="{{ getClass('services') }}"><a [routerLink]="['/services']"><i class="fa fa-gear"></i> <span>Services</span></a></li>
+            <li class="{{ getClass('kvproperties') }}"><a [routerLink]="['/kvproperties']"><i class="fa fa-cubes"></i> <span>K/V Properties</span></a></li>
+        </ul>
+    </section>
+</aside>

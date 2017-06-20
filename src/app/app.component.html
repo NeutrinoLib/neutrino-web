@@ -1,4 +1,22 @@
 <toaster-container></toaster-container>
 <div class="wrapper" style="height: auto;">
-    <router-outlet></router-outlet>
+
+    <!-- Start header. -->
+    <app-header></app-header>
+    <!-- End header. -->
+
+    <!-- Start sidebar. -->
+    <app-sidebar></app-sidebar>
+    <!-- End sidebar. -->
+
+    <!-- Start content wrapper. -->
+    <div class="content-wrapper" style="min-height: 916px;">
+        <router-outlet></router-outlet>
+    </div>
+    <!-- End content wrapper. -->
+
+    <!-- Start footer. -->
+    <app-footer></app-footer>
+    <!-- End footer. -->
+
 </div>
