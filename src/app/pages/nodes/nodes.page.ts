@@ -17,15 +17,12 @@ export class NodesPage implements OnInit {
         private neutrinoApiService: NeutrinoApiService) 
     { 
         sidebarService.active = "nodes";
+    }
 
-        console.log("test");
+    ngOnInit() {
         this.neutrinoApiService.getNodes().subscribe(result => {
             var json = result.json();
             this.nodes = json;
         });
     }
-
-    ngOnInit() {
-    }
-
 }

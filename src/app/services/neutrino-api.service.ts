@@ -13,4 +13,7 @@ export class NeutrinoApiService {
         return this.httpClient.get('http://localhost:5000/api/nodes');
     }
 
+    public getCurrentNodeState(nodeAddress: String) : Observable<Response> {
+        return this.httpClient.get(nodeAddress + '/api/nodes/current/state');
+    }
 }

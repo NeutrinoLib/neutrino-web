@@ -18,6 +18,7 @@ import { KvpropertiesPage} from './pages/kvproperties/kvproperties.page';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NodeStateComponent } from './components/node-state/node-state.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FooterComponent } from './components/footer/footer.component';
     KvpropertiesPage,
     SidebarComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NodeStateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,10 @@
+<div *ngIf="nodeState">
+    <i *ngIf="nodeState.state === 'Leader'" class="fa fa-circle text-green"></i>
+    <i *ngIf="nodeState.state === 'Follower'" class="fa fa-circle text-blue"></i>
+    <i *ngIf="nodeState.state === 'Candidate'" class="fa fa-circle text-yellow"></i>
+    <i *ngIf="nodeState.state === 'Stopped'" class="fa fa-circle text-red"></i>
+    {{ nodeState.state }}
+</div>
+<div *ngIf="!nodeState">
+    <i class="fa fa-spin fa-spinner"></i>
+</div>
