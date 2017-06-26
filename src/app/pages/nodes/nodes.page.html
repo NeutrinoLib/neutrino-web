@@ -24,13 +24,19 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>State</th>
+                                <th></th>
                             </tr>
                             <tr *ngFor="let node of nodes; let i = index">
                                 <td>{{ i + 1 }}</td>
                                 <td>{{ node.id }}</td>
                                 <td>{{ node.name }}</td>
                                 <td>{{ node.address }}</td>
-                                <td><app-node-state [node]="node"></app-node-state></td>
+                                <td>
+                                    <app-node-state [node]="node"></app-node-state>
+                                </td>
+                                <td>
+                                    <button [routerLink]="['/nodes', node.id]" type="submit" class="btn btn-default btn-sm pull-right">Details</button>
+                                </td>
                             </tr>                           
                         </tbody>
                     </table>

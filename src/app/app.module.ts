@@ -14,11 +14,17 @@ import { HomePage } from './pages/home/home.page';
 import { NodesPage } from './pages/nodes/nodes.page';
 import { ServicesPage } from './pages/services/services.page';
 import { KvpropertiesPage} from './pages/kvproperties/kvproperties.page';
+import { NodeDetailsPage } from './pages/node-details/node-details.page';
 
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NodeStateComponent } from './components/node-state/node-state.component';
+
+import { KeysPipe } from './pipes/keys.pipe';
+
+import { ServiceSmallTableComponent } from './components/service-small-table/service-small-table.component';
+import { KvpropertiesSmallTableComponent } from './components/kvproperties-small-table/kvproperties-small-table.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +33,14 @@ import { NodeStateComponent } from './components/node-state/node-state.component
     NodesPage,
     ServicesPage,
     KvpropertiesPage,
+    NodeDetailsPage,
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
-    NodeStateComponent
+    NodeStateComponent,
+    KeysPipe,
+    ServiceSmallTableComponent,
+    KvpropertiesSmallTableComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +50,7 @@ import { NodeStateComponent } from './components/node-state/node-state.component
     { path: '', redirectTo: 'home', pathMatch: 'full' },
         { path: 'home', component: HomePage },
         { path: 'nodes', component: NodesPage },
+        { path: 'nodes/:id', component: NodeDetailsPage },
         { path: 'services', component: ServicesPage },
         { path: 'kvproperties', component: KvpropertiesPage }
     ]) 
