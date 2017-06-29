@@ -13,6 +13,10 @@ export class NeutrinoApiService {
         return this.httpClient.get(nodeAddress + '/api/services');
     }
 
+    public getKvProperties(nodeAddress: String) : Observable<Response> {
+        return this.httpClient.get(nodeAddress + '/api/key-values');
+    }
+
     public getNodes() : Observable<Response> {
         return this.httpClient.get('http://localhost:5000/api/nodes');
     }

@@ -5,10 +5,10 @@
       <th>Key</th>
       <th>Value</th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>Update software</td>
-      <td>55%</td>
+    <tr *ngFor="let item of kvProperties; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.key }}</td>
+      <td>{{ item.value }}</td>
     </tr>
   </tbody>
 </table>

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Node } from '../../entities/node';
+import { KvProperty } from "app/entities/kvProperty";
+import { NeutrinoApiService } from "app/services/neutrino-api.service";
 
 @Component({
     selector: 'app-kvproperties-small-table',
@@ -11,19 +13,20 @@ export class KvpropertiesSmallTableComponent implements OnInit {
     @Input()
     public node: Node;
 
-    constructor() { }
+    public kvProperties: KvProperty[];
+
+    constructor(private neutrinoApiService: NeutrinoApiService) { }
 
     ngOnInit() {
-        // this.neutrinoApiService.getCurrentNodeState(this.node.address).subscribe(
-        //     result => {
-        //         var json = result.json();
-        //         this.nodeState = json;
-        //     },
-        //     error => {
-        //         this.nodeState = new NodeState();
-        //         this.nodeState.state = "Stopped";
-        //     }
-        // );
+        this.neutrinoApiService.getKvProperties(this.node.address).subscribe(
+            result => {
+                var json = result.json();
+                this.kvProperties = json;
+            },
+            error => {
+                this.kvProperties = null;
+            }
+        );
     }
 
 }
